@@ -139,8 +139,6 @@ namespace EpochsUnbound
 
             else
             {
-                KeyboardState state = Keyboard.GetState();
-
                 if (CurrentState == GameState.FirstPersonMode && state.IsKeyDown(Keys.Space))
                 {
                     CurrentState = GameState.MainMenu;
