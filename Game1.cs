@@ -100,17 +100,15 @@ namespace EpochsUnbound
 
             MouseState currentMouseState = Mouse.GetState();
 
-            MouseState previousMouseState;
-
             if (CurrentState == GameState.MainMenu)
             {
                 if (menuOptions.Count > 0)
                 {
                     Rectangle menuRect = new Rectangle(50, 50, 200, menuOptions.Count * 45);
 
-                    if (menuRect.Contains(mouseState.Position))
+                    if (menuRect.Contains(currentMouseState.Position))
                     {
-                        selectedMenuIndex = (mouseState.Y - 50) / 45;
+                        selectedMenuIndex = (currentMouseState.Y - 50) / 45;
 
                         if (previousMouseState.LeftButton == ButtonState.Released &&
                             currentMouseState.LeftButton == ButtonState.Pressed)
