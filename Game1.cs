@@ -28,6 +28,7 @@ namespace EpochsUnbound
         Vector3 cameraPosition;
         Vector3 cameraDirection;
         float movementSpeed;
+        MouseState previousMouseState;
 
         public Game1()
         {
@@ -97,7 +98,7 @@ namespace EpochsUnbound
                 cameraPosition -= Vector3.Cross(new Vector3(0, 1, 0), cameraDirection) * movementSpeed;
             }
 
-            MouseState mouseState = Mouse.GetState();
+            MouseState currentMouseState = Mouse.GetState();
 
             MouseState previousMouseState;
 
@@ -111,8 +112,8 @@ namespace EpochsUnbound
                     {
                         selectedMenuIndex = (mouseState.Y - 50) / 45;
 
-                        if (previousMouseState.LeftButton == ButtonState.Pressed &&
-                            mouseState.LeftButton == ButtonState.Released)
+                        if (previousMouseState.LeftButton == ButtonState.Released &&
+                            currentMouseState.LeftButton == ButtonState.Pressed)
                         {
                             switch (selectedMenuIndex)
                             {
@@ -129,7 +130,7 @@ namespace EpochsUnbound
                                     CurrentState = GameState.SkillTree;
                                     break;
                                 case 4:
-                                    this.Exit(); // Directly exit when the "Exit" menu item is selected
+                                    Exit();
                                     break;
                             }
                         }
@@ -156,6 +157,8 @@ namespace EpochsUnbound
                     CurrentState = GameState.MainMenu;
                 }
             }
+
+            previousMouseState = currentMouseState;
 
             base.Update(gameTime);
         }
