@@ -25,11 +25,19 @@ namespace EpochsUnbound
         int selectedMenuIndex = 0;
         GameState CurrentState;
 
+        Vector3 cameraPosition;
+        Vector3 cameraDirection;
+        float movementSpeed;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+
+            cameraPosition = new Vector3(0, 0, 0);
+            cameraDirection = new Vector3(0, 0, -1);
+            movementSpeed = 0.1f;
         }
 
         protected override void Initialize()
@@ -68,6 +76,25 @@ namespace EpochsUnbound
                 graphics.PreferredBackBufferWidth = Math.Min(Window.ClientBounds.Width, 1200);
                 graphics.PreferredBackBufferHeight = Math.Min(Window.ClientBounds.Height, 900);
                 graphics.ApplyChanges();
+            }
+
+            KeyboardState state = Keyboard.GetState();
+
+            if (state.IsKeyDown(Keys.W))
+            {
+                cameraPosition += cameraDirection * movementSpeed;
+            }
+            if (state.IsKeyDown(Keys.S))
+            {
+                cameraPosition -= cameraDirection * movementSpeed;
+            }
+            if (state.IsKeyDown(Keys.A))
+            {
+                cameraPosition += Vector3.Cross(new Vector3(0, 1, 0), cameraDirection) * movementSpeed;
+            }
+            if (state.IsKeyDown(Keys.D))
+            {
+                cameraPosition -= Vector3.Cross(new Vector3(0, 1, 0), cameraDirection) * movementSpeed;
             }
 
             MouseState mouseState = Mouse.GetState();
@@ -185,7 +212,30 @@ namespace EpochsUnbound
 
         private void DrawFirstPersonMode()
         {
-            // TODO: Add code here to render the 3D environment for the first person mode
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            BasicEffect effect = new BasicEffect(GraphicsDevice);
+            effect.VertexColorEnabled = true;
+
+            effect.View = Matrix.CreateLookAt(cameraPosition, cameraPosition + cameraDirection, Vector3.Up);
+            effect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, GraphicsDevice.Viewport.AspectRatio, 0.1f, 100f);
+
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+
+                GraphicsDevice.DrawUserPrimitives(
+                    PrimitiveType.TriangleList,
+                    new VertexPositionColor[]
+                    {
+                        new VertexPositionColor(new Vector3(-1, -1, -1), Color.Red),
+                        new VertexPositionColor(new Vector3(1, -1, -1), Color.Green),
+                        new VertexPositionColor(new Vector3(0, 1, -1), Color.Blue)
+                    },
+                    0,
+                    1
+                );
+            }
         }
     }
 }
