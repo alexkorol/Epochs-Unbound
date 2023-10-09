@@ -136,24 +136,9 @@ namespace EpochsUnbound
                 }
             }
 
-            else
+            if (CurrentState != GameState.MainMenu && state.IsKeyDown(Keys.Escape))
             {
-                if (CurrentState == GameState.FirstPersonMode && state.IsKeyDown(Keys.Space))
-                {
-                    CurrentState = GameState.MainMenu;
-                }
-                else if (CurrentState == GameState.Inventory && state.IsKeyDown(Keys.I))
-                {
-                    CurrentState = GameState.MainMenu;
-                }
-                else if (CurrentState == GameState.WorldSimMode && state.IsKeyDown(Keys.W))
-                {
-                    CurrentState = GameState.MainMenu;
-                }
-                else if (CurrentState == GameState.SkillTree && state.IsKeyDown(Keys.S))
-                {
-                    CurrentState = GameState.MainMenu;
-                }
+                CurrentState = GameState.MainMenu;
             }
 
             previousMouseState = currentMouseState;
