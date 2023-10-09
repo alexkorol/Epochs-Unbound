@@ -57,7 +57,7 @@ namespace EpochsUnbound
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = Content.Load<SpriteFont>("epochsunbound");
+            font = Content.Load<SpriteFont>("eu");
         }
 
         protected override void Update(GameTime gameTime)

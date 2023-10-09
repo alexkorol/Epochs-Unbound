@@ -1,3 +1,14 @@
-﻿
-using var game = new EU.Game1();
-game.Run();
+﻿using System;
+
+namespace EpochsUnbound
+{
+    public static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            using (var game = new Game1())
+                game.Run();
+        }
+    }
+}
