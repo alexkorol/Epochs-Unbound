@@ -99,7 +99,7 @@ namespace EpochsUnbound
 
             MouseState mouseState = Mouse.GetState();
 
-            MouseState previousMouseState = Mouse.GetState();
+            MouseState previousMouseState;
 
             if (CurrentState == GameState.MainMenu)
             {
