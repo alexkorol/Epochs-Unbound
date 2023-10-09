@@ -223,17 +223,36 @@ namespace EpochsUnbound
             {
                 pass.Apply();
 
-                GraphicsDevice.DrawUserPrimitives(
-                    PrimitiveType.TriangleList,
-                    new VertexPositionColor[]
-                    {
-                        new VertexPositionColor(new Vector3(-1, -1, -1), Color.Red),
-                        new VertexPositionColor(new Vector3(1, -1, -1), Color.Green),
-                        new VertexPositionColor(new Vector3(0, 1, -1), Color.Blue)
-                    },
-                    0,
-                    1
-                );
+                // Draw a simple cube
+                VertexPositionColor[] vertices = new VertexPositionColor[8];
+                int[] indices = new int[24];
+
+                // Define the cube vertices
+                vertices[0] = new VertexPositionColor(new Vector3(-1, -1, -1), Color.White);
+                vertices[1] = new VertexPositionColor(new Vector3(1, -1, -1), Color.White);
+                vertices[2] = new VertexPositionColor(new Vector3(-1, 1, -1), Color.White);
+                vertices[3] = new VertexPositionColor(new Vector3(1, 1, -1), Color.White);
+                vertices[4] = new VertexPositionColor(new Vector3(-1, -1, 1), Color.White);
+                vertices[5] = new VertexPositionColor(new Vector3(1, -1, 1), Color.White);
+                vertices[6] = new VertexPositionColor(new Vector3(-1, 1, 1), Color.White);
+                vertices[7] = new VertexPositionColor(new Vector3(1, 1, 1), Color.White);
+
+                // Define the cube edges
+                indices[0] = 0; indices[1] = 1;
+                indices[2] = 0; indices[3] = 2;
+                indices[4] = 1; indices[5] = 3;
+                indices[6] = 2; indices[7] = 3;
+                indices[8] = 4; indices[9] = 5;
+                indices[10] = 4; indices[11] = 6;
+                indices[12] = 5; indices[13] = 7;
+                indices[14] = 6; indices[15] = 7;
+                indices[16] = 0; indices[17] = 4;
+                indices[18] = 1; indices[19] = 5;
+                indices[20] = 2; indices[21] = 6;
+                indices[22] = 3; indices[23] = 7;
+
+                // Draw the cube
+                GraphicsDevice.DrawUserIndexedPrimitives(PrimitiveType.LineList, vertices, 0, 8, indices, 0, 12);
             }
         }
     }
