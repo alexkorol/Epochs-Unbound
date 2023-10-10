@@ -6,21 +6,30 @@ namespace EpochsUnbound.GameModes
 {
     public class AdventurerMode
     {
-        public Camera Camera { get; private set; }
+        public Player Player { get; private set; }
+        public World World { get; private set; }
 
         public AdventurerMode()
         {
-            Camera = new Camera();
+            Player = new Player();
+            World = new World();
+        }
+
+        public void MovePlayer(Direction direction)
+        {
+            Player.Move(direction);
         }
 
         public void UpdateAdventurerMode(GameTime gameTime)
         {
-            // Update logic for AdventurerMode goes here
+            Player.Update(gameTime);
+            World.Update(gameTime);
         }
 
-        public void DrawAdventurerMode(GraphicsDevice graphicsDevice, BasicEffect basicEffect)
+        public void DrawAdventurerMode(SpriteBatch spriteBatch, SpriteFont font)
         {
-            // Drawing logic for AdventurerMode goes here
+            World.Draw(spriteBatch, font);
+            Player.Draw(spriteBatch, font);
         }
     }
 }

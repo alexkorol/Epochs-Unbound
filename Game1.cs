@@ -89,19 +89,19 @@ namespace EpochsUnbound
             {
                 if (state.IsKeyDown(Keys.W))
                 {
-                    adventurerMode.Camera.MoveForward(movementSpeed);
+                    adventurerMode.MovePlayer(Direction.Up);
                 }
                 if (state.IsKeyDown(Keys.S))
                 {
-                    adventurerMode.Camera.MoveBackward(movementSpeed);
+                    adventurerMode.MovePlayer(Direction.Down);
                 }
                 if (state.IsKeyDown(Keys.A))
                 {
-                    adventurerMode.Camera.MoveLeft(movementSpeed);
+                    adventurerMode.MovePlayer(Direction.Left);
                 }
                 if (state.IsKeyDown(Keys.D))
                 {
-                    adventurerMode.Camera.MoveRight(movementSpeed);
+                    adventurerMode.MovePlayer(Direction.Right);
                 }
                 if (state.IsKeyDown(Keys.Escape))
                 {
@@ -174,8 +174,7 @@ namespace EpochsUnbound
                     break;
 
                 case GameState.AdventurerMode:
-                    // Assuming you have an instance of AdventurerMode class named adventurerMode
-                    adventurerMode.DrawAdventurerMode(GraphicsDevice, new BasicEffect(GraphicsDevice));
+                    adventurerMode.DrawAdventurerMode(spriteBatch, font);
                     break;
 
                 // case GameState.FirstPersonMode has been removed as FirstPersonMode no longer exists
