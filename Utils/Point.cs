@@ -10,5 +10,10 @@ namespace EpochsUnbound.Utils
             this.x = x;
             this.y = y;
         }
+
+        public Vector2 ToVector2()
+        {
+            return new Vector2((float)x, (float)y);
+        }
     }
 }
