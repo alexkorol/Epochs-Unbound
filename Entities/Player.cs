@@ -44,12 +44,14 @@ namespace EpochsUnbound.Entities
 
         public void Update(GameTime gameTime)
         {
-            // Implement update logic here
+            // For now, let's just print the player's position to the console
+            Console.WriteLine($"Player position: {Position}");
         }
 
         public void Draw(SpriteBatch spriteBatch, SpriteFont font)
         {
-            // Implement draw logic here
+            // For now, let's just draw a simple rectangle at the player's position
+            spriteBatch.Draw(Texture2D.CreateRectangle(1, 1), Position, Color.White);
         }
     }
 }
