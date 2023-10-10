@@ -87,21 +87,24 @@ namespace EpochsUnbound
 
             KeyboardState state = Keyboard.GetState();
 
-            if (state.IsKeyDown(Keys.W))
+            if (CurrentState == GameState.AdventurerMode)
             {
-                cameraPosition += cameraDirection * movementSpeed;
-            }
-            if (state.IsKeyDown(Keys.S))
-            {
-                cameraPosition -= cameraDirection * movementSpeed;
-            }
-            if (state.IsKeyDown(Keys.A))
-            {
-                cameraPosition += Vector3.Cross(new Vector3(0, 1, 0), cameraDirection) * movementSpeed;
-            }
-            if (state.IsKeyDown(Keys.D))
-            {
-                cameraPosition -= Vector3.Cross(new Vector3(0, 1, 0), cameraDirection) * movementSpeed;
+                if (state.IsKeyDown(Keys.W))
+                {
+                    camera.MoveForward(movementSpeed);
+                }
+                if (state.IsKeyDown(Keys.S))
+                {
+                    camera.MoveBackward(movementSpeed);
+                }
+                if (state.IsKeyDown(Keys.A))
+                {
+                    camera.MoveLeft(movementSpeed);
+                }
+                if (state.IsKeyDown(Keys.D))
+                {
+                    camera.MoveRight(movementSpeed);
+                }
             }
 
             MouseState currentMouseState = Mouse.GetState();
