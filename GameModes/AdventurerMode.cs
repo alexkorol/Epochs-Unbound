@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using EpochsUnbound.Entities;
+using EpochsUnbound.Utils;
 
 namespace EpochsUnbound.GameModes
 {
