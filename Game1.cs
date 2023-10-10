@@ -21,6 +21,7 @@ namespace EpochsUnbound
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont font;
+        private AdventurerMode adventurerMode;
 
         List<string> menuOptions;
         int selectedMenuIndex = 0;
@@ -40,6 +41,8 @@ namespace EpochsUnbound
             cameraPosition = new Vector3(0, 0, 0);
             cameraDirection = new Vector3(0, 0, -1);
             movementSpeed = 0.1f;
+
+            adventurerMode = new AdventurerMode();
         }
 
         protected override void Initialize()
