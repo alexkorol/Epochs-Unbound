@@ -16,21 +16,23 @@ namespace EpochsUnbound.Entities
 
         public void Move(Direction direction)
         {
+            Vector2 newPosition = Position;
             switch (direction)
             {
                 case Direction.Up:
-                    Position.Y -= Speed;
+                    newPosition.Y -= Speed;
                     break;
                 case Direction.Down:
-                    Position.Y += Speed;
+                    newPosition.Y += Speed;
                     break;
                 case Direction.Left:
-                    Position.X -= Speed;
+                    newPosition.X -= Speed;
                     break;
                 case Direction.Right:
-                    Position.X += Speed;
+                    newPosition.X += Speed;
                     break;
             }
+            Position = newPosition;
         }
 
         public void Update(GameTime gameTime)

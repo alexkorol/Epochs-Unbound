@@ -30,7 +30,6 @@ namespace EpochsUnbound
 
         Vector3 cameraPosition;
         Vector3 cameraDirection;
-        float movementSpeed;
         MouseState previousMouseState;
 
         public Game1()
