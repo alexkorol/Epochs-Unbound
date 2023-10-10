@@ -9,6 +9,7 @@ namespace EpochsUnbound
     public enum GameState
     {
         MainMenu,
+        AdventurerMode,
         FirstPersonMode,
         Inventory,
         WorldSimMode,
@@ -116,18 +117,21 @@ namespace EpochsUnbound
                             switch (selectedMenuIndex)
                             {
                                 case 0:
-                                    CurrentState = GameState.FirstPersonMode;
+                                    CurrentState = GameState.AdventurerMode;
                                     break;
                                 case 1:
-                                    CurrentState = GameState.Inventory;
+                                    CurrentState = GameState.FirstPersonMode;
                                     break;
                                 case 2:
-                                    CurrentState = GameState.WorldSimMode;
+                                    CurrentState = GameState.Inventory;
                                     break;
                                 case 3:
-                                    CurrentState = GameState.SkillTree;
+                                    CurrentState = GameState.WorldSimMode;
                                     break;
                                 case 4:
+                                    CurrentState = GameState.SkillTree;
+                                    break;
+                                case 5:
                                     Exit();
                                     break;
                             }
@@ -136,7 +140,12 @@ namespace EpochsUnbound
                 }
             }
 
-            if (CurrentState != GameState.MainMenu && state.IsKeyDown(Keys.Escape))
+            if (CurrentState == GameState.AdventurerMode)
+            {
+                // Assuming you have an instance of AdventurerMode class named adventurerMode
+                adventurerMode.UpdateAdventurerMode(gameTime);
+            }
+            else if (CurrentState != GameState.MainMenu && state.IsKeyDown(Keys.Escape))
             {
                 CurrentState = GameState.MainMenu;
             }
@@ -155,6 +164,11 @@ namespace EpochsUnbound
             {
                 case GameState.MainMenu:
                     DrawMainMenu();
+                    break;
+
+                case GameState.AdventurerMode:
+                    // Assuming you have an instance of AdventurerMode class named adventurerMode
+                    adventurerMode.DrawAdventurerMode(GraphicsDevice, new BasicEffect(GraphicsDevice));
                     break;
 
                 case GameState.FirstPersonMode:
