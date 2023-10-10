@@ -30,6 +30,7 @@ namespace EpochsUnbound
 
         Vector3 cameraPosition;
         Vector3 cameraDirection;
+        float movementSpeed;
         MouseState previousMouseState;
 
         public Game1()
@@ -42,7 +43,7 @@ namespace EpochsUnbound
             cameraDirection = new Vector3(0, 0, -1);
             movementSpeed = 0.1f;
 
-            adventurerMode = new AdventurerMode();
+            adventurerMode = new AdventurerMode(movementSpeed);
         }
 
         protected override void Initialize()
