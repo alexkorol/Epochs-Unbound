@@ -5,6 +5,7 @@ namespace EpochsUnbound.Utils
 {
     struct Hex
     {
+        public int q;
         // Hex struct and related methods go here
     }
 }
