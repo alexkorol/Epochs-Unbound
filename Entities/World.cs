@@ -47,7 +47,7 @@ namespace EpochsUnbound.Entities
             {
                 for (int y = 0; y < Tiles.GetLength(1); y++)
                 {
-                    Hex hex = new Hex(x, y, -x - y);
+                    Hex hex = new Hex(x, y, (int)(-x - y));
                     Point[] corners = Layout.PolygonCorners(layout, hex);
 
                     for (int i = 0; i < 6; i++)
