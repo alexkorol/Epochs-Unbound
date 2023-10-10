@@ -129,17 +129,16 @@ namespace EpochsUnbound
                                 case 0:
                                     CurrentState = GameState.AdventurerMode;
                                     break;
-                                // case 1 has been removed as FirstPersonMode no longer exists
-                                case 2:
+                                case 1:
                                     CurrentState = GameState.Inventory;
                                     break;
-                                case 3:
+                                case 2:
                                     CurrentState = GameState.WorldSimMode;
                                     break;
-                                case 4:
+                                case 3:
                                     CurrentState = GameState.SkillTree;
                                     break;
-                                case 5:
+                                case 4:
                                     Exit();
                                     break;
                             }
