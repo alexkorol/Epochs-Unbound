@@ -10,9 +10,9 @@ namespace EpochsUnbound.GameModes
         public Player Player { get; private set; }
         public World World { get; private set; }
 
-        public AdventurerMode()
+        public AdventurerMode(float movementSpeed)
         {
-            Player = new Player();
+            Player = new Player(movementSpeed);
             World = new World(100, 100); // Initialize with a 100x100 world
         }
 
