@@ -40,7 +40,7 @@ namespace EpochsUnbound.Entities
             Texture2D pixel = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
             pixel.SetData(new[] { Color.LightBlue });
 
-            Layout layout = new Layout(Layout.FlatTop, new Point(64, 64), new Point(0, 0));
+            Layout layout = new Layout(Layout.FlatTop, new EpochsUnbound.Utils.Point(64, 64), new EpochsUnbound.Utils.Point(0, 0));
 
             for (int x = 0; x < Tiles.GetLength(0); x++)
             {
@@ -53,7 +53,7 @@ namespace EpochsUnbound.Entities
                     {
                         Point start = corners[i];
                         Point end = corners[(i + 1) % 6];
-                        spriteBatch.DrawLine(start, end, pixel, Color.LightBlue);
+                        spriteBatch.DrawLine(start.ToVector2(), end.ToVector2(), pixel, Color.LightBlue);
                     }
                 }
             }
