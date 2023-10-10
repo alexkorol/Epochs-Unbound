@@ -50,6 +50,7 @@ namespace EpochsUnbound
         {
             menuOptions = new List<string>
             {
+                "Adventurer Mode",
                 "1st Person Mode",
                 "Inventory",
                 "WorldSim Mode",
