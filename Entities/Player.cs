@@ -20,17 +20,23 @@ namespace EpochsUnbound.Entities
             Vector2 newPosition = Position;
             switch (direction)
             {
-                case Direction.Up:
+                case HexDirection.NorthWest:
                     newPosition.Y -= Speed;
                     break;
-                case Direction.Down:
+                case HexDirection.NorthEast:
+                    newPosition.Y -= Speed;
+                    break;
+                case HexDirection.East:
+                    newPosition.X += Speed;
+                    break;
+                case HexDirection.SouthEast:
                     newPosition.Y += Speed;
                     break;
-                case Direction.Left:
-                    newPosition.X -= Speed;
+                case HexDirection.SouthWest:
+                    newPosition.Y += Speed;
                     break;
-                case Direction.Right:
-                    newPosition.X += Speed;
+                case HexDirection.West:
+                    newPosition.X -= Speed;
                     break;
             }
             Position = newPosition;
