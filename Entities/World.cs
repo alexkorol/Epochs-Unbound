@@ -11,7 +11,13 @@ namespace EpochsUnbound.Entities
         public World(int width, int height)
         {
             Tiles = new Tile[width, height];
-            // Initialize each tile here
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    Tiles[i, j] = new Tile();
+                }
+            }
         }
 
         public void Update(GameTime gameTime)

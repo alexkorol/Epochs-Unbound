@@ -8,10 +8,10 @@ namespace EpochsUnbound.Entities
         public Vector2 Position { get; private set; }
         public float Speed { get; private set; }
 
-        public Player()
+        public Player(float speed)
         {
             Position = Vector2.Zero;
-            Speed = 1.0f;
+            Speed = speed;
         }
 
         public void Move(Direction direction)
