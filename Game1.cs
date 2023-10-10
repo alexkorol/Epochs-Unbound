@@ -69,10 +69,13 @@ namespace EpochsUnbound
             base.Initialize();
         }
 
+        Texture2D playerTexture;
+
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("eu");
+            playerTexture = Content.Load<Texture2D>("player");
         }
 
         protected override void Update(GameTime gameTime)
@@ -184,7 +187,7 @@ namespace EpochsUnbound
                     break;
 
                 case GameState.AdventurerMode:
-                    adventurerMode.DrawAdventurerMode(spriteBatch, font);
+                    adventurerMode.DrawAdventurerMode(spriteBatch, font, playerTexture);
                     break;
 
                 // case GameState.FirstPersonMode has been removed as FirstPersonMode no longer exists

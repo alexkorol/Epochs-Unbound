@@ -28,10 +28,10 @@ namespace EpochsUnbound.GameModes
             World.Update(gameTime);
         }
 
-        public void DrawAdventurerMode(SpriteBatch spriteBatch, SpriteFont font)
+        public void DrawAdventurerMode(SpriteBatch spriteBatch, SpriteFont font, Texture2D playerTexture)
         {
             World.Draw(spriteBatch, font);
-            Player.Draw(spriteBatch, font);
+            Player.Draw(spriteBatch, playerTexture);
         }
     }
 }
