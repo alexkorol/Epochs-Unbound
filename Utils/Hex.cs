@@ -16,6 +16,13 @@ namespace EpochsUnbound.Utils
             this.s = -q - r;
         }
 
+        public Hex(int q, int r, int s)
+        {
+            this.q = q;
+            this.r = r;
+            this.s = s;
+        }
+
         public int Distance(Hex b)
         {
             return (Math.Abs(q - b.q) + Math.Abs(r - b.r) + Math.Abs(s - b.s)) / 2;
