@@ -1,7 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using EpochsUnbound.Entities;
-using EpochsUnbound.Entities;
 
 namespace EpochsUnbound.GameModes
 {
@@ -13,7 +12,7 @@ namespace EpochsUnbound.GameModes
         public AdventurerMode()
         {
             Player = new Player();
-            World = new World();
+            World = new World(100, 100); // Initialize with a 100x100 world
         }
 
         public void MovePlayer(Direction direction)
