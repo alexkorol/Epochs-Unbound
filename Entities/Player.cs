@@ -52,7 +52,7 @@ namespace EpochsUnbound.Entities
         public void Draw(SpriteBatch spriteBatch, Texture2D playerTexture)
         {
             // Draw the player texture at the player's position
-            spriteBatch.Draw(playerTexture, new Rectangle(Position.ToPoint(), new EpochsUnbound.Utils.Point(64, 64)), Color.White);
+            spriteBatch.Draw(playerTexture, new Microsoft.Xna.Framework.Rectangle(Position.ToPoint(), new Microsoft.Xna.Framework.Point(64, 64)), Color.White);
         }
     }
 }

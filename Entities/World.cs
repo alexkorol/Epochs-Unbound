@@ -41,7 +41,7 @@ namespace EpochsUnbound.Entities
             Texture2D pixel = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
             pixel.SetData(new[] { Color.LightBlue });
 
-            Layout layout = new Layout(Layout.FlatTop, new EpochsUnbound.Utils.Point(64, 64), new EpochsUnbound.Utils.Point(0, 0));
+            Layout layout = new Layout(Layout.FlatTop, new EpochsUnbound.Utils.Point(64, 64), new Microsoft.Xna.Framework.Point(0, 0));
 
             for (int x = 0; x < Tiles.GetLength(0); x++)
             {
