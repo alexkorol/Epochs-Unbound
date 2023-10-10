@@ -13,8 +13,7 @@ namespace EpochsUnbound
         AdventurerMode,
         Inventory,
         WorldSimMode,
-        SkillTree,
-        DungeonCrawlerMode
+        SkillTree
     }
 
     public class Game1 : Game
@@ -23,7 +22,6 @@ namespace EpochsUnbound
         SpriteBatch spriteBatch;
         SpriteFont font;
         private AdventurerMode adventurerMode;
-        private DungeonCrawlerMode dungeonCrawlerMode;
 
         List<string> menuOptions;
         int selectedMenuIndex = 0;
