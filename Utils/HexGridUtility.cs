@@ -1,14 +1,12 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace EpochsUnbound.Utils
 {
     public static class HexGridUtility
     {
         // Generated code -- CC0 -- No Rights Reserved -- http://www.redblobgames.com/grids/hexagons/
-
-using System;
-using System.Linq;
-using System.Collections.Generic;
 
 
 
