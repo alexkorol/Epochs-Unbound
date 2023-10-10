@@ -14,7 +14,7 @@ namespace EpochsUnbound.Entities
             Speed = speed;
         }
 
-        public void Move(Direction direction)
+        public void Move(HexDirection direction)
         {
             Vector2 newPosition = Position;
             switch (direction)
