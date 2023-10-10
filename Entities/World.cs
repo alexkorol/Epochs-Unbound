@@ -47,12 +47,12 @@ namespace EpochsUnbound.Entities
                 for (int y = 0; y < Tiles.GetLength(1); y++)
                 {
                     Hex hex = new Hex(x, y, (int)(-x - y));
-                    Point[] corners = Layout.PolygonCorners(layout, hex);
+                    EpochsUnbound.Utils.Point[] corners = Layout.PolygonCorners(layout, hex);
 
                     for (int i = 0; i < 6; i++)
                     {
-                        Point start = corners[i];
-                        Point end = corners[(i + 1) % 6];
+                        EpochsUnbound.Utils.Point start = corners[i];
+                        EpochsUnbound.Utils.Point end = corners[(i + 1) % 6];
                         spriteBatch.DrawLine(start.ToVector2(), end.ToVector2(), pixel, Color.LightBlue);
                     }
                 }
