@@ -1,3 +1,6 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
 namespace EpochsUnbound.Entities
 {
     public class World
@@ -27,5 +30,3 @@ namespace EpochsUnbound.Entities
         }
     }
 }
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
