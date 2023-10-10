@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using EpochsUnbound.GameModes;
 using EpochsUnbound.Entities;
+using EpochsUnbound.Utils;
 
 namespace EpochsUnbound
 {
