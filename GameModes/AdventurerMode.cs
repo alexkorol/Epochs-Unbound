@@ -6,6 +6,21 @@ namespace EpochsUnbound.GameModes
     public class AdventurerMode
     {
         // Add methods and properties specific to the Adventurer mode here
+        private Camera camera;
+        private Grid grid;
+        private SpriteBatch spriteBatch;
+        private Texture2D gradientTexture;
+        private Triangle triangle;
+
+        public AdventurerMode(Camera camera, Grid grid, SpriteBatch spriteBatch, Texture2D gradientTexture, Triangle triangle)
+        {
+            this.camera = camera;
+            this.grid = grid;
+            this.spriteBatch = spriteBatch;
+            this.gradientTexture = gradientTexture;
+            this.triangle = triangle;
+        }
+
         public void DrawAdventurerMode(GraphicsDevice graphicsDevice, BasicEffect effect)
         {
             // Draw a grid ground

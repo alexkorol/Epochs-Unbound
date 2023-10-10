@@ -91,19 +91,19 @@ namespace EpochsUnbound
             {
                 if (state.IsKeyDown(Keys.W))
                 {
-                    camera.MoveForward(movementSpeed);
+                    adventurerMode.Camera.MoveForward(movementSpeed);
                 }
                 if (state.IsKeyDown(Keys.S))
                 {
-                    camera.MoveBackward(movementSpeed);
+                    adventurerMode.Camera.MoveBackward(movementSpeed);
                 }
                 if (state.IsKeyDown(Keys.A))
                 {
-                    camera.MoveLeft(movementSpeed);
+                    adventurerMode.Camera.MoveLeft(movementSpeed);
                 }
                 if (state.IsKeyDown(Keys.D))
                 {
-                    camera.MoveRight(movementSpeed);
+                    adventurerMode.Camera.MoveRight(movementSpeed);
                 }
             }
 
