@@ -1,3 +1,6 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
 namespace EpochsUnbound.GameModes
 {
     public class AdventurerMode
