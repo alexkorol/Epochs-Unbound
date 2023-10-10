@@ -8,6 +8,18 @@ namespace EpochsUnbound.Utils
         public int q;
         public int r;
         public int s;
+
+        public Hex(int q, int r)
+        {
+            this.q = q;
+            this.r = r;
+            this.s = -q - r;
+        }
+
+        public int Distance(Hex b)
+        {
+            return (Math.Abs(q - b.q) + Math.Abs(r - b.r) + Math.Abs(s - b.s)) / 2;
+        }
         // Hex struct and related methods go here
     }
 }
