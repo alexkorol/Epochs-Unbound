@@ -1,3 +1,5 @@
+using Microsoft.Xna.Framework;
+
 namespace EpochsUnbound.Entities
 {
     public class Player
