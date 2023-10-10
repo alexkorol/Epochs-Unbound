@@ -1,3 +1,5 @@
+using Microsoft.Xna.Framework;
+
 namespace EpochsUnbound.Utils
 {
     public struct Point
