@@ -11,7 +11,6 @@ namespace EpochsUnbound
     {
         MainMenu,
         AdventurerMode,
-        FirstPersonMode,
         Inventory,
         WorldSimMode,
         SkillTree
@@ -51,7 +50,6 @@ namespace EpochsUnbound
             menuOptions = new List<string>
             {
                 "Adventurer Mode",
-                "1st Person Mode",
                 "Inventory",
                 "WorldSim Mode",
                 "SkillTree",
@@ -104,6 +102,10 @@ namespace EpochsUnbound
                 if (state.IsKeyDown(Keys.D))
                 {
                     adventurerMode.Camera.MoveRight(movementSpeed);
+                }
+                if (state.IsKeyDown(Keys.Escape))
+                {
+                    CurrentState = GameState.MainMenu;
                 }
             }
 
