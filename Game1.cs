@@ -90,19 +90,27 @@ namespace EpochsUnbound
             {
                 if (state.IsKeyDown(Keys.W))
                 {
-                    adventurerMode.MovePlayer(Direction.Up);
+                    adventurerMode.MovePlayer(HexDirection.NorthWest);
                 }
-                if (state.IsKeyDown(Keys.S))
+                if (state.IsKeyDown(Keys.E))
                 {
-                    adventurerMode.MovePlayer(Direction.Down);
-                }
-                if (state.IsKeyDown(Keys.A))
-                {
-                    adventurerMode.MovePlayer(Direction.Left);
+                    adventurerMode.MovePlayer(HexDirection.NorthEast);
                 }
                 if (state.IsKeyDown(Keys.D))
                 {
-                    adventurerMode.MovePlayer(Direction.Right);
+                    adventurerMode.MovePlayer(HexDirection.East);
+                }
+                if (state.IsKeyDown(Keys.X))
+                {
+                    adventurerMode.MovePlayer(HexDirection.SouthEast);
+                }
+                if (state.IsKeyDown(Keys.Z))
+                {
+                    adventurerMode.MovePlayer(HexDirection.SouthWest);
+                }
+                if (state.IsKeyDown(Keys.A))
+                {
+                    adventurerMode.MovePlayer(HexDirection.West);
                 }
                 if (state.IsKeyDown(Keys.Escape))
                 {

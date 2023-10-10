@@ -16,7 +16,7 @@ namespace EpochsUnbound.GameModes
             World = new World(100, 100); // Initialize with a 100x100 world
         }
 
-        public void MovePlayer(Direction direction)
+        public void MovePlayer(HexDirection direction)
         {
             Player.Move(direction);
         }
