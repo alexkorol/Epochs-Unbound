@@ -2,6 +2,9 @@ namespace EpochsUnbound.Entities
 {
     public enum Direction
     {
-        // Define the Direction enum here
+        Up,
+        Down,
+        Left,
+        Right
     }
 }
