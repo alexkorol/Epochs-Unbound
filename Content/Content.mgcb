@@ -20,3 +20,8 @@
 /processorParam:TextureFormat=Compressed
 /build:File.spritefont;eu.spritefont
 
+#begin player.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:player.png
+
